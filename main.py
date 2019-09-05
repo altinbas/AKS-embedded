@@ -8,8 +8,8 @@ while 1:
     try:
         line = sp.readFromPort(openPorts["Generic"])
         if line != b'':
-            #print(str(line))
-            utils.parseBatteryData(line)
+            print(str(line))
+            utils.parseBatteryData(str(line))
             sp.writeToPort(openPorts["XBee"], line)
     except:
         print("Error occured while trying to read from port: " + str(openPorts["Generic"]))

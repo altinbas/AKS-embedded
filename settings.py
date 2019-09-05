@@ -7,8 +7,8 @@ portSettings = {
 }
 
 batteryOPCodes = {
-    "Voltages": 21,
-    "Temps": 22,
-    "AmpsAndStatus": 24,
-    "MinMaxCells": 26
+    "Voltages": "21",
+    "Temps": "22",
+    "AmpsAndStatus": "24",
+    "MinMaxCells": "26"
 }
