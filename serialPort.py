@@ -1,7 +1,7 @@
 import serial
 import settings
 from serial.tools import list_ports
-
+66
 def getAllPorts():
     ''' Reads all the available serial ports from the system,
         then classify them based on their descriptions. '''
@@ -56,14 +56,14 @@ def closePorts(portList):
             print("Could not disconnect from the port?")
 
 def writeToPort(port, data):
-    ''' Writes the given data to the given port '''
+    ''' Writes the given data to the given port. '''
     try:
         port.write(data)
     except:
         print("Could not write data to given port")
 
 def readFromPort(port):
-    ''' Reads data from the given port then return it '''
+    ''' Reads data from the given port then returns it. '''
     try:
         return port.readline()
     except:

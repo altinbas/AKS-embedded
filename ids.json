@@ -1,0 +1,152 @@
+[
+  {
+    "Id": "1",
+    "Name": "Battery level",
+    "Code": "100",
+    "Format": "{0:2}%",
+    "UseGauge": "true",
+    "GaugeName": "ggBatteryLevel",
+    "UseGUI": "true",
+    "GUIControlName": "lblBatteryLevel"
+  },
+  {
+    "Id": "2",
+    "Name": "Velocity",
+    "Code": "001",
+    "Format": "{0}km/s",
+    "UseGauge": "true",
+    "GaugeName": "ggVelocity",
+    "UseGUI": "true",
+    "GUIControlName": "lblVelocity"
+  },
+  {
+    "Id": "3",
+    "Name": "Active current",
+    "Code": "110",
+    "Format": "{0:N1}A",
+    "UseGauge": "false",
+    "GaugeName": "",
+    "UseGUI": "true",
+    "GUIControlName": "lblActiveCurrent"
+  },
+  {
+    "Id": "4",
+    "Name": "Battery Heat C-1",
+    "Code": "120",
+    "Format": "{0:N1}°C",
+    "UseGauge": "false",
+    "GaugeName": "",
+    "UseGUI": "true",
+    "GUIControlName": "lblBatteryHeatC1"
+  },
+  {
+    "Id": "5",
+    "Name": "Battery Heat C-2",
+    "Code": "121",
+    "Format": "{0:N1}°C",
+    "UseGauge": "false",
+    "GaugeName": "",
+    "UseGUI": "true",
+    "GUIControlName": "lblBatteryHeatC2"
+  },
+  {
+    "Id": "6",
+    "Name": "Battery Heat C-3",
+    "Code": "122",
+    "Format": "{0:N1}°C",
+    "UseGauge": "false",
+    "GaugeName": "",
+    "UseGUI": "true",
+    "GUIControlName": "lblBatteryHeatC3"
+  },
+  {
+    "Id": "7",
+    "Name": "Max Cell-1",
+    "Code": "130",
+    "Format": "{0}V",
+    "UseGauge": "false",
+    "GaugeName": "",
+    "UseGUI": "true",
+    "GUIControlName": "lblMaxCell1"
+  },
+  {
+    "Id": "8",
+    "Name": "Max Cell-2",
+    "Code": "131",
+    "Format": "{0}V",
+    "UseGauge": "false",
+    "GaugeName": "",
+    "UseGUI": "true",
+    "GUIControlName": "lblMaxCell2"
+  },
+  {
+    "Id": "9",
+    "Name": "Max Cell-3",
+    "Code": "132",
+    "Format": "{0}V",
+    "UseGauge": "false",
+    "GaugeName": "",
+    "UseGUI": "true",
+    "GUIControlName": "lblMaxCell3"
+  },
+  {
+    "Id": "10",
+    "Name": "Min Cell-1",
+    "Code": "140",
+    "Format": "{0}V",
+    "UseGauge": "false",
+    "GaugeName": "",
+    "UseGUI": "true",
+    "GUIControlName": "lblMinCell1"
+  },
+  {
+    "Id": "11",
+    "Name": "Min Cell-2",
+    "Code": "141",
+    "Format": "{0}V",
+    "UseGauge": "false",
+    "GaugeName": "",
+    "UseGUI": "true",
+    "GUIControlName": "lblMinCell2"
+  },
+  {
+    "Id": "12",
+    "Name": "Min Cell-3",
+    "Code": "142",
+    "Format": "{0}V",
+    "UseGauge": "false",
+    "GaugeName": "",
+    "UseGUI": "true",
+    "GUIControlName": "lblMinCell3"
+  },
+  {
+    "Id": "13",
+    "Name": "Difference C-1",
+    "Code": "150",
+    "Format": "{0}V",
+    "UseGauge": "false",
+    "GaugeName": "",
+    "UseGUI": "true",
+    "GUIControlName": "lblDifference1"
+  },
+  {
+    "Id": "14",
+    "Name": "Difference C-2",
+    "Code": "151",
+    "Format": "{0}",
+    "UseGauge": "false",
+    "GaugeName": "",
+    "UseGUI": "true",
+    "GUIControlName": "lblDifference2"
+  },
+  {
+    "Id": "15",
+    "Name": "Difference C-3",
+    "Code": "152",
+    "Format": "{0}",
+    "UseGauge": "false",
+    "GaugeName": "",
+    "UseGUI": "true",
+    "GUIControlName": "lblDifference3"
+  }
+]

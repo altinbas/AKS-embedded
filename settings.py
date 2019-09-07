@@ -1,5 +1,7 @@
+isProduction = True
 usbTemplate = "/dev/{}"
-batterySensorCount = 2
+BMSCount = 3
+listLengths = 3
 
 portSettings = {
     "baudrate": 38400,
@@ -11,4 +13,29 @@ batteryOPCodes = {
     "Temps": "22",
     "AmpsAndStatus": "24",
     "MinMaxCells": "26"
+}
+
+ids = {
+    "batteryLevel": "100",
+    "current": "110",
+    "temps": [
+        "120",
+        "121",
+        "122"
+    ],
+    "maxV": [
+        "130",
+        "131",
+        "132"
+    ],
+    "minV": [
+        "140",
+        "141",
+        "142"
+    ],
+    "differenceV": [
+        "150",
+        "151",
+        "152"
+    ]
 }
