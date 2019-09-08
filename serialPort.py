@@ -1,7 +1,7 @@
 import serial
 import settings
 from serial.tools import list_ports
-66
+
 def getAllPorts():
     ''' Reads all the available serial ports from the system,
         then classify them based on their descriptions. '''
