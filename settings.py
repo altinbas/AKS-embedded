@@ -1,10 +1,11 @@
-isProduction = True
+isProduction = False
 usbTemplate = "/dev/{}"
 BMSCount = 3
 listLengths = 3
 
 portSettings = {
     "baudrate": 38400,
+    "gpsBaudrate": 9600,
     "timeout": 0.1
 }
 
@@ -37,5 +38,10 @@ ids = {
         "150",
         "151",
         "152"
-    ]
+    ],
+    "coordinates": [
+        "160",
+        "161"
+    ],
+    "speed": "170"
 }

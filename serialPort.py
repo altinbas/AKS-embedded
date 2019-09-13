@@ -15,6 +15,7 @@ def getAllPorts():
 
     # Iterate over all ports to classify them.
     for port in plist:
+        print(port.description)
         # Car's battery shows up as "USB2.0 Ser!" in the system.
         if "Ser!" in port.description:
             portList["Battery"] = usbTemplate.format(port.name)
@@ -24,7 +25,6 @@ def getAllPorts():
             portList["Generic"] = usbTemplate.format(port.name)
         else:
             portList["Discard"] = usbTemplate.format(port.name)
-
     return portList
 
 def openPorts(portList):
@@ -38,9 +38,14 @@ def openPorts(portList):
         # If the port is not one of the discarded ones, open the port and save it to openPorts dictionary.
         if name != "Discard":
             try:
-                openPorts[name] = serial.Serial(port,
-                    baudrate = settings.portSettings["baudrate"],
-                    timeout = settings.portSettings["timeout"])
+                if name != "Generic":
+                    openPorts[name] = serial.Serial(port,
+                        baudrate = settings.portSettings["baudrate"],
+                        timeout = settings.portSettings["timeout"])
+                else:
+                    openPorts[name] = serial.Serial(port,
+                        baudrate = settings.portSettings["gpsBaudrate"],
+                        timeout = settings.portSettings["timeout"])
             except:
                 print("Error occured while trying to open port: " + name + " " + port)
     return openPorts

@@ -72,7 +72,7 @@ def parseBatteryData(data, lastValues):
     elif opCode in st.batteryOPCodes["MinMaxCells"]:
         mutatedData = parseMinMaxCells(data[3:])
     else:
-        mutatedData = "Baba aküyü çalmışlar"
+        mutatedData = ["Baba aküyü çalmışlar"]
 
     mutatedData.insert(0, sid)
     mutatedData.insert(1, opCode)
@@ -173,6 +173,11 @@ def packData(data):
         packed.append(packCurrent(data))
     elif opCode == "22":
         packed.append(packTemp(data))
+    elif data[0] == "$GPVTG":
+        packed.append(packSpeed(data))
+    elif data[0] == "$GPGLL":
+        packed.append(packCoordinates(data, 0))
+        packed.append(packCoordinates(data, 1))
     return packed
 
 def packBatteryLevel(data):
@@ -192,3 +197,12 @@ def minV(data):
 
 def differenceV(data):
     return "{}:{}*".format(st.ids["differenceV"][data[0]], data[4])
+
+def packSpeed(data):
+    return "{}:{}*".format(st.ids["speed"], data[1])
+
+def packCoordinates(data, i):
+    if i == 0:
+        return "{}:{}*".format(st.ids["coordinates"][0], data[1])
+    else:
+        return "{}:{}*".format(st.ids["coordinates"][1], data[3])
