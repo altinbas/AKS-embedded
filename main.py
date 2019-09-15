@@ -48,9 +48,7 @@ while 1:
                 try:
                     #lcdController.lcd_string("MAYMUNCUK      <",0x80)
                     line1 = "S:{} T:{}".format(lastValues["lastSpeed"][-1], lastValues["lastTemps"][0][-1])
-                    print(line1)
                     line2 = "%:{}  A:{}".format(lastValues["lastPercentages"][0][-1], lastValues["lastAmps"][-1])
-                    print(line2)
                     lcdController.lcd_string(str(line1), 0x80)
                     lcdController.lcd_string(str(line2), 0xC0)
                 except:

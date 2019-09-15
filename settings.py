@@ -1,4 +1,4 @@
-isProduction = False
+isProduction = True
 usbTemplate = "/dev/{}"
 BMSCount = 3
 listLengths = 3

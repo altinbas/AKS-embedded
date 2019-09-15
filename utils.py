@@ -176,10 +176,7 @@ def packData(data):
     elif opCode == "22":
         packed.append(packTemp(data))
     elif data[0] == "$GPVTG":
-        print("Burda Hız")
-        print(data)
         packed.append(packSpeed(data))
-        print(packed)
     elif data[0] == "$GPGLL":
         packed.append(packCoordinates(data, 0))
         packed.append(packCoordinates(data, 1))
@@ -211,4 +208,4 @@ def packCoordinates(data, i):
     if i == 0:
         return "{}:{}*".format(st.ids["coordinates"][0], data[1])
     else:
-        return "{}:{}*".format(st.ids["coordinates"][1], data[3])
+        return "{}:{}*".format(st.ids["coordinates"][1], data[2])
