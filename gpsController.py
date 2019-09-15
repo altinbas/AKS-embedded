@@ -1,26 +1,27 @@
 def parseGPSData(data, lastValues):
     data = data[2:-5].split(",")
     opCode = data[0]
-    mutatedData = None
+    mutatedData = []
     if opCode == "$GPVTG":
         mutatedData = parseSpeed(data)
-        lastValues["lastSpeed"].append(float(mutatedData))
+        lastValues["lastSpeed"].append(mutatedData[-1])
+        print(mutatedData)
     elif opCode == "$GPGLL":
         mutatedData = parseCoordinates(data)
         if mutatedData[0] != "0":
             lastValues["lastLocation"][0].append(mutatedData[0])
             lastValues["lastLocation"][1].append(mutatedData[1])
-    else:
-        mutatedData = ["N/A"]
     mutatedData.insert(0, opCode)
-    print(mutatedData)
+    return mutatedData
 
 #HIZ VERISI
 def parseSpeed(data):
+    speed = []
     if data[-3] == "":
-        return [0]
+        speed.append(0)
     else:
-        return data[-3]
+        speed.append(data[-3])
+    return speed
 
 #KONUM BILGISI
 def parseCoordinates(data):

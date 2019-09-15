@@ -163,21 +163,27 @@ def parseMinMaxCells(data):
 
 def packData(data):
     packed = []
-    opCode = data[1]
+    opCode = None
+    if len(data) > 1:
+        opCode = data[1]
     if opCode == "21":
-       packed.append(packBatteryLevel(data))
-       packed.append(maxV(data))
-       packed.append(minV(data))
-       packed.append(differenceV(data))
+        packed.append(packBatteryLevel(data))
+        packed.append(maxV(data))
+        packed.append(minV(data))
+        packed.append(differenceV(data))
     elif opCode == "24":
         packed.append(packCurrent(data))
     elif opCode == "22":
         packed.append(packTemp(data))
     elif data[0] == "$GPVTG":
+        print("Burda Hız")
+        print(data)
         packed.append(packSpeed(data))
+        print(packed)
     elif data[0] == "$GPGLL":
         packed.append(packCoordinates(data, 0))
         packed.append(packCoordinates(data, 1))
+
     return packed
 
 def packBatteryLevel(data):

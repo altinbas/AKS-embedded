@@ -6,11 +6,11 @@ import lcdController
 import gpsController
 
 lastValues = {
-    "lastPercentages": [[50],[50],[50]],
-    "lastAmps": [],
-    "lastTemps": [[0],[0],[0]],
-    "lastWatts": [],
-    "lastVoltages": [[0],[0],[0]],
+    "lastPercentages": [[50.85],[50.85],[50.85]],
+    "lastAmps": [21.81],
+    "lastTemps": [[25.78],[25.78],[25.78]],
+    "lastWatts": [0],
+    "lastVoltages": [[0],[0], [0]],
     "lastLocation": [[0.0],[0.0]],
     "lastSpeed": [0]
 }
@@ -43,13 +43,14 @@ while 1:
                     sp.writeToPort(openPorts["XBee"], data.encode())
         if gps != b'':
             parsed = gpsController.parseGPSData(str(gps), lastValues)
-            print(parsed)
             packData = utils.packData(parsed)
             if len(packData) > 0:
                 try:
                     #lcdController.lcd_string("MAYMUNCUK      <",0x80)
-                    line1 = "%:{}    T:{}".format(lastValues["lastPercentages"][0][-1], lastValues["lastTemps"][0][-1])
-                    line2 = "A:{} S:{}".format(lastValues["lastAmps"][-1], lastValues["speed"][-1])
+                    line1 = "S:{} T:{}".format(lastValues["lastSpeed"][-1], lastValues["lastTemps"][0][-1])
+                    print(line1)
+                    line2 = "%:{}  A:{}".format(lastValues["lastPercentages"][0][-1], lastValues["lastAmps"][-1])
+                    print(line2)
                     lcdController.lcd_string(str(line1), 0x80)
                     lcdController.lcd_string(str(line2), 0xC0)
                 except:
